@@ -1,0 +1,45 @@
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<Component xmlns="http://www.red5studios.com/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.red5studios.com/ ../../../../schemas/component.xsd">
+	<Info
+		title="PGC"
+		author="Blaine"
+		description="Polski Globalny Chat"
+		url="www.firefall.pl"
+		uiVersion="1000"
+	/>
+
+	<Events>
+		<Event name="ON_COMPONENT_LOAD"		bind="OnComponentLoad" />
+		<Event name="MY_HUD_SHOW"			bind="OnShow"/>
+		<Event name="ON_WHEEL_SCROLL"		bind="OnScroll" />
+		<Event name="MY_OPTIONS_DISPLAY"	bind="OnOptionsDisplay"/>
+		<Event name="ON_BEGIN_CHAT"			bind="OnBeginChat"/>
+		<Event name="ON_INPUT_MODE_CHANGED"	bind="OnModeChange" />
+	</Events>
+	
+
+	<Frames>
+		<PanelFrame name="Main" permanent="true" dimensions="right:60%; width:375; bottom:60%; height:200">
+			<Children>
+				<Group id="CLIPPER" name="clipper" dimensions="dock:fill" style="clip-children:true;">
+									<FocusBox name="scrollBox" dimensions="dock:fill">
+										<Events>
+											<OnScroll bind="PGC_OnScroll"/>
+										</Events>
+									</FocusBox>								
+					<Group id="CONTAINER" name="container" dimensions="dock:fill">
+
+
+					</Group>
+	
+				</Group>
+			</Children>
+		</PanelFrame>
+	</Frames>
+
+</Component>
+
