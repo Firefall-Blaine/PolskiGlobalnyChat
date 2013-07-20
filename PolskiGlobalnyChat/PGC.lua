@@ -265,5 +265,3 @@ end
 function autoUpdate2(interwal)
 callback(autoUpdate, interwal, 2)
 end
-
-
